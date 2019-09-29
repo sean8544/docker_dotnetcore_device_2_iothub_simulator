@@ -1,11 +1,31 @@
 # This is a dotnet core simulator app for docker or local enviromnent
 
+## Precondition:
+* dotnet core 2.2.100( windows x64 download:https://download.visualstudio.microsoft.com/download/pr/7ae62589-2bc1-412d-a653-5336cff54194/b573c4b135280fb369e671a8f477163a/dotnet-sdk-2.2.100-win-x64.exe)
+* docker ce (windows 10 x64 download: https://hub.docker.com/editions/community/docker-ce-desktop-windows)
+
 ## For docker environment
 
-download code:
+1. download code and exploded, for example  D:\
 
-dotnet publish -c Release
+2. cd D:\docker_dotnetcore_device_2_iothub_simulator-master\app
 
-docker build -t dotnet_core_device_to_iothub_simulator -f Dockerfile .  
+3. run commond: dotnet publish -c Release
 
-docker run -it  --rm  dotnet_core_device_to_iothub_simulator  "HostName=seanyutestiothub.azure-devices.cn;DeviceId=test01;SharedAccessKey=zMPvohvJStheyx3mL96I5SRQKt9Nvv7SamAI/g2QBM0=" "5"
+4. cd D:\docker_dotnetcore_device_2_iothub_simulator-master\
+
+5. run commond: docker build -t dotnet_core_device_to_iothub_simulator -f Dockerfile .  
+
+6. run comond:  docker run -it  --rm  dotnet_core_device_to_iothub_simulator  "{your device connection string to iothub}" "{nub of send interval,for example 2 }"
+
+if simulator run successfully, you will see on your screen:
+
+> This is a .net core device simulator in docker or vs/vscode.
+> The app need 2 parameters:
+> the first one is Iot device connection string, you can hard code set s_connectionString= you device 
+> connection string,
+> the second one is transmission interval(default is 1s) . Ctrl-C to exit.
+> Args_Param0:{xxx.xxx.xxx}
+> Args_Param1:5
+> 09/29/2019 09:58:41 > Sending message: {"temperature":"22.71","humidity":"73.87"}
+> 09/29/2019 09:58:46 > Sending message: {"temperature":"22.40","humidity":"63.79"}
