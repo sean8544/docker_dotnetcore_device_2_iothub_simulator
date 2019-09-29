@@ -1,4 +1,6 @@
-# This is a dotnet core simulator app for docker or local enviromnent
+# OverView
+## This is a dotnet core simulator app for docker or local enviromnent
+## Pass device connection string and send interval to the simulator then it will send random temperature and humidity to azure iothub
 
 ## Precondition:
 * dotnet core 2.2.100 ( windows x64 download:https://download.visualstudio.microsoft.com/download/pr/7ae62589-2bc1-412d-a653-5336cff54194/b573c4b135280fb369e671a8f477163a/dotnet-sdk-2.2.100-win-x64.exe)
