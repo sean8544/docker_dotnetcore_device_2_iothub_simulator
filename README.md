@@ -29,7 +29,7 @@
 > 09/29/2019 09:58:41 > Sending message: {"temperature":"22.71","humidity":"73.87"}  
 > 09/29/2019 09:58:46 > Sending message: {"temperature":"22.40","humidity":"63.79"}  
 
-## For docker environment
+## For local(dotnet/vs/vscode) environment
 1. download code and exploded, for example  D:\
 
 2. cd D:\docker_dotnetcore_device_2_iothub_simulator-master\app
